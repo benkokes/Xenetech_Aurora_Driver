@@ -1,0 +1,109 @@
+*% Aurora JobServer XPS bridge. Rendering to JBS is outside the spooler.
+*GPDFileVersion: "1.0"
+*GPDSpecVersion: "1.0"
+*GPDFileName: "Aurora.gpd"
+*Include: "msxpsinc.gpd"
+*Include: "StdNames.gpd"
+*ModelName: "Aurora JobServer XPS Bridge"
+*MasterUnits: PAIR(600, 600)
+*ResourceDLL: "unires.dll"
+*PrinterType: PAGE
+*MaxCopies: 1
+*PrintSchemaPrivateNamespaceURI: "urn:aurora-jobserver:print-schema:1"
+
+*% MXDC only applies the manifest's PNG policy when this public feature exists.
+*% Lossy compression changes grayscale artwork before laser thresholding.
+*Feature: OutputQuality
+{
+    *Name: "Lossless bitmap capture"
+    *PrintSchemaKeywordMap: "PageOutputQuality"
+    *FeatureType: DOC_PROPERTY
+    *ConcealFromUI?: TRUE
+    *DefaultOption: High
+    *Option: High
+    {
+        *Name: "Lossless"
+        *PrintSchemaKeywordMap: "High"
+    }
+}
+
+*Feature: InputBin
+{
+    *rcNameID: =PAPER_SOURCE_DISPLAY
+    *DefaultOption: FORMSOURCE
+    *ConcealFromUI?: TRUE
+    *Option: FORMSOURCE
+    {
+        *rcNameID: =AUTO_DISPLAY
+    }
+}
+*Feature: Orientation
+{
+    *rcNameID: =ORIENTATION_DISPLAY
+    *DefaultOption: PORTRAIT
+    *Option: PORTRAIT
+    {
+        *rcNameID: =PORTRAIT_DISPLAY
+    }
+}
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY
+    *DefaultOption: DPI600
+    *Option: DPI600
+    {
+        *Name: "600 x 600 dpi (application rendering)"
+        *DPI: PAIR(600, 600)
+        *TextDPI: PAIR(600, 600)
+        *SpotDiameter: 100
+        *Command: CmdBeginRaster { *Cmd: "" }
+        *Command: CmdEndRaster { *Cmd: "" }
+        *Command: CmdSendBlockData { *Cmd: "" }
+    }
+}
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: AuroraBed
+    *Option: AuroraBed
+    {
+        *Name: "Aurora bed 30 x 18 inches"
+        *PageDimensions: PAIR(18000, 10800)
+        *PrintableArea: PAIR(18000, 10800)
+        *PrintableOrigin: PAIR(0, 0)
+        *CursorOrigin: PAIR(0, 0)
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.1
+            *Cmd: ""
+        }
+    }
+}
+*Feature: ColorMode
+{
+    *rcNameID: =COLOR_PRINTING_MODE_DISPLAY
+    *DefaultOption: 24bpp
+    *Option: 24bpp
+    {
+        *Name: "Color (retain vector colors)"
+        *Color?: TRUE
+        *DevNumOfPlanes: 1
+        *DevBPP: 24
+        *DrvBPP: 24
+    }
+}
+*Feature: Collate
+{
+    *Name: "Collate"
+    *ConcealFromUI?: TRUE
+    *DefaultOption: OFF
+    *Option: OFF
+    {
+        *rcNameID: =OFF_DISPLAY
+    }
+}
+
+*% Required by native configuration even though the render output is XPS.
+*Command: CmdCR { *Cmd: "" }
+*Command: CmdLF { *Cmd: "" }
+*Command: CmdFF { *Cmd: "" }

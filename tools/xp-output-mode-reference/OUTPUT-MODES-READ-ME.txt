@@ -1,0 +1,32 @@
+NEXT OFFLINE XP COMPARISON: OUTPUT MODES (167 DPI)
+
+Purpose: compare the original driver's Both, Raster Only and Vector Only jobs.
+This writes local reference files. It does not send a job to the laser.
+The host JobServer stays in Capture only. Keep XP's network cable disconnected
+and its JobServer closed throughout. The VM cable was verified disconnected.
+
+Use the unchanged Z:\Aurora-XP-Reference\test-corel11.cdr in XP CorelDRAW 11.
+1. Run xp-reference-backup.cmd before closing JobServer, if it is open.
+   Then ensure XP JobServer is closed. Do not reconnect XP's network cable.
+2. Original Xenetech Properties: 167 DPI; raster 30 ips / 45%; vector
+   1 ips / 15% / 1000 PPI; No Focus; Autostart off; color settings off;
+   30 x 18 inches; zero offsets; normal orientation; other bitmap settings
+   unchanged. Corel Layout: As in document / 100%, no Fit or centering.
+3. Select Both Raster and Vector. Print the drawing ONCE in XP.
+   Immediately run xp-reference-collect-both.cmd from this folder.
+4. Change ONLY Output Mode to Raster Only. Print the same drawing ONCE.
+   Immediately run xp-reference-collect-raster-only.cmd.
+5. Change ONLY Output Mode to Vector Only. Print the same drawing ONCE.
+   Immediately run xp-reference-collect-vector-only.cmd.
+6. Restore Both Raster and Vector without printing again. Keep 167 DPI,
+   XP offline, XP JobServer closed and the host JobServer in Capture only.
+
+Run each collector after its corresponding print, before the next print can
+replace Default.jbs. Collectors copy to separate output-both-*,
+output-raster-only-* and output-vector-only-* folders and leave inbox files
+unchanged. No collector prints, starts JobServer, moves or deletes a job.
+A requested-mode label records your intended test; the actual output is still
+checked independently from the copied job. No repeat 500-DPI test is needed.
+
+If a print or copy fails, stop and report the error instead of printing again.
+Reply: Three output-mode captures ready; Both restored.

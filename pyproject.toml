@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aurora-jobserver"
+version = "0.2.0"
+description = "Job queue, raster preparation, and experimental Ethernet delivery for Xenetech Aurora engravers"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+aurora-jobserver = "aurora_jobserver.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["aurora_jobserver*", "tools"]

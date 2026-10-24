@@ -1,0 +1,16 @@
+reference/
+analysis/extracted/
+analysis/pe/
+analysis/pe2039/
+analysis/disassembly/
+analysis/*-extraction.log
+tools/python/
+tools/unshield/
+tools/downloads/
+**/__pycache__/
+captures/
+capture-*/
+runtime/
+*.egg-info/
+build/
+dist/

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><psf:PrintTicket xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0000="urn:aurora-jobserver:print-schema:1" xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords" version="1">
+  
+  <psf:ParameterInit name="psk:JobCopiesAllDocuments">
+    <psf:Value xsi:type="xsd:integer">1</psf:Value>
+  </psf:ParameterInit>
+  <psf:Feature name="psk:PageMediaSize">
+    <psf:Option name="ns0000:AuroraBed">
+      <psf:ScoredProperty name="psk:MediaSizeWidth">
+        <psf:Value xsi:type="xsd:integer">762000</psf:Value>
+      </psf:ScoredProperty>
+      <psf:ScoredProperty name="psk:MediaSizeHeight">
+        <psf:Value xsi:type="xsd:integer">457200</psf:Value>
+      </psf:ScoredProperty>
+    </psf:Option>
+  </psf:Feature>
+  <psf:Feature name="psk:JobInputBin">
+    <psf:Option name="psk:AutoSelect"/>
+  </psf:Feature>
+  <psf:Feature name="psk:PageOrientation">
+    <psf:Option name="psk:Portrait"/>
+  </psf:Feature>
+  <psf:Feature name="psk:PageResolution">
+    <psf:Option name="ns0000:DPI600">
+      <psf:ScoredProperty name="psk:ResolutionX">
+        <psf:Value xsi:type="xsd:integer">600</psf:Value>
+      </psf:ScoredProperty>
+      <psf:ScoredProperty name="psk:ResolutionY">
+        <psf:Value xsi:type="xsd:integer">600</psf:Value>
+      </psf:ScoredProperty>
+    </psf:Option>
+  </psf:Feature>
+  <psf:Feature name="psk:PageOutputColor">
+    <psf:Option name="psk:Color">
+      <psf:ScoredProperty name="psk:DeviceBitsPerPixel">
+        <psf:Value xsi:type="xsd:integer">24</psf:Value>
+      </psf:ScoredProperty>
+      <psf:ScoredProperty name="psk:DriverBitsPerPixel">
+        <psf:Value xsi:type="xsd:integer">24</psf:Value>
+      </psf:ScoredProperty>
+    </psf:Option>
+  </psf:Feature>
+  <psf:Feature name="psk:DocumentCollate">
+    <psf:Option name="psk:Uncollated"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraRasterPower">
+    <psf:Option name="ns0000:Percent45"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraRasterSpeed">
+    <psf:Option name="ns0000:Speed30000"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraVectorPower">
+    <psf:Option name="ns0000:Percent15"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraVectorSpeed">
+    <psf:Option name="ns0000:Speed1000"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraVectorPPI">
+    <psf:Option name="ns0000:PPI1000"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraLaserDPI">
+    <psf:Option name="ns0000:DPI167"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraAutostart">
+    <psf:Option name="ns0000:Off"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraOutputMode">
+    <psf:Option name="ns0000:RasterAndVector"/>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobAuroraFocus">
+    <psf:Option name="ns0000:None"/>
+  </psf:Feature>
+</psf:PrintTicket>
